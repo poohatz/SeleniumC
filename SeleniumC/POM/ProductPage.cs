@@ -58,7 +58,7 @@ namespace SeleniumC.POM
 
         }
         
-        public CartPage addToCart()
+        public CartPage AddToCart()
         {
 
             wait = new WebDriverWait(driver, new TimeSpan(0, 0, 5));

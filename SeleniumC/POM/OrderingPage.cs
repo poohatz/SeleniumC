@@ -5,6 +5,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace SeleniumC.POM
 {
@@ -63,14 +64,14 @@ namespace SeleniumC.POM
             return this;
         }
 
-        public OrderingPage fillAddressInStepOneForm(String address)
+        public OrderingPage FillAddressInStepOneForm(String address)
         {
 
             driver.FindElement(By.CssSelector(addressInputInStepOneFormOrderingPageSelector)).SendKeys(address);
             return this;
         }
 
-        public OrderingPage clearAddressInStepOneForm()
+        public OrderingPage ClearAddressInStepOneForm()
         {
 
             driver.FindElement(By.CssSelector(addressInputInStepOneFormOrderingPageSelector)).Clear();
@@ -78,35 +79,35 @@ namespace SeleniumC.POM
         }
 
 
-        public OrderingPage fillCodeInStepOneForm(String code)
+        public OrderingPage FillCodeInStepOneForm(String code)
         {
 
             driver.FindElement(By.CssSelector(codeInputInStepOneFormOrderingPageSelector)).SendKeys(code);
             return this;
         }
 
-        public OrderingPage clearCodeInStepOneForm()
+        public OrderingPage ClearCodeInStepOneForm()
         {
 
             driver.FindElement(By.CssSelector(codeInputInStepOneFormOrderingPageSelector)).Clear();
             return this;
         }
 
-        public OrderingPage fillCityInStepOneForm(String city)
+        public OrderingPage FillCityInStepOneForm(String city)
         {
 
             driver.FindElement(By.CssSelector(cityInputInStepOneFormOrderingPageSelector)).SendKeys(city);
             return this;
         }
 
-        public OrderingPage clearCityInStepOneForm()
+        public OrderingPage ClearCityInStepOneForm()
         {
 
             driver.FindElement(By.CssSelector(cityInputInStepOneFormOrderingPageSelector)).Clear();
             return this;
         }
 
-        public OrderingPage fillTelInStepOneForm(String tel)
+        public OrderingPage FillTelInStepOneForm(String tel)
         {
 
             driver.FindElement(By.CssSelector(telInputInStepOneFormOrderingPageSelector)).SendKeys(tel);
@@ -114,7 +115,7 @@ namespace SeleniumC.POM
         }
 
 
-        public OrderingPage clearTelInStepOneForm()
+        public OrderingPage ClearTelInStepOneForm()
         {
 
             driver.FindElement(By.CssSelector(telInputInStepOneFormOrderingPageSelector)).Clear();
@@ -122,21 +123,21 @@ namespace SeleniumC.POM
         }
 
 
-        public OrderingPage fillEmailInStepOneForm(String email)
+        public OrderingPage FillEmailInStepOneForm(String email)
         {
 
             driver.FindElement(By.CssSelector(emailInputInStepOneFormOrderingPageSelector)).SendKeys(email);
             return this;
         }
 
-        public OrderingPage clearEmailInStepOneForm()
+        public OrderingPage ClearEmailInStepOneForm()
         {
 
             driver.FindElement(By.CssSelector(emailInputInStepOneFormOrderingPageSelector)).Clear();
             return this;
         }
 
-        public OrderingPage fillCommentsInStepOneForm(String comments)
+        public OrderingPage FillCommentsInStepOneForm(String comments)
         {
 
             driver.FindElement(By.CssSelector(commentsInputInStepOneFormOrderingPageSelector)).SendKeys(comments);
@@ -144,35 +145,35 @@ namespace SeleniumC.POM
         }
 
 
-        public OrderingPage clearCommentsInStepOneForm()
+        public OrderingPage ClearCommentsInStepOneForm()
         {
 
             driver.FindElement(By.CssSelector(commentsInputInStepOneFormOrderingPageSelector)).Clear();
             return this;
         }
 
-        public OrderingPage isInvoiceNeededOptionSteoOneForm(Boolean invoice)
+        public OrderingPage IsInvoiceNeededOptionSteoOneForm(Boolean invoice)
         {
 
             driver.FindElement(By.CssSelector(invoiceOptionInStepOneFormOrderingPageSelector)).Click();
             return this;
         }
 
-        public OrderingPage clearIsInvoiceNeededOptionSteoOneForm()
+        public OrderingPage ClearIsInvoiceNeededOptionSteoOneForm()
         {
 
             driver.FindElement(By.CssSelector(invoiceOptionInStepOneFormOrderingPageSelector)).Clear();
             return this;
         }
 
-        public OrderingPage fillNipInStepOneForm(String nip)
+        public OrderingPage FillNipInStepOneForm(String nip)
         {
 
             driver.FindElement(By.CssSelector(nipInputInStepOneFormOrderingPageSelector)).SendKeys(nip);
             return this;
         }
 
-        public OrderingPage clearNipInStepOneForm()
+        public OrderingPage ClearNipInStepOneForm()
         {
 
             driver.FindElement(By.CssSelector(nipInputInStepOneFormOrderingPageSelector)).Clear();
@@ -180,30 +181,30 @@ namespace SeleniumC.POM
         }
 
 
-        public OrderingPage saveAndContinueOrderingPage()
+        public OrderingPage SaveAndContinueOrderingPage()
         {
 
             driver.FindElement(By.CssSelector(continueButtonInStepOneFormOrderingPageSelector)).Click();
             return this;
         }
 
-        /*public Map<String, String> getAddressDataFromStepTwoOrderingPage()
+        public Hashtable GetAddressDataFromStepTwoOrderingPage()
         {
 
-            List<WebElement> summaryData = driver.findElements(dataFromSummaryOrderingPageSelector);
-            Map<String, String> summaryDataFromOrderingPage = new HashMap<>();
-            summaryDataFromOrderingPage.put("name", summaryData.get(0).getText());
-            summaryDataFromOrderingPage.put("address", summaryData.get(1).getText());
-            summaryDataFromOrderingPage.put("code", summaryData.get(2).getText());
-            summaryDataFromOrderingPage.put("city", summaryData.get(3).getText());
-            summaryDataFromOrderingPage.put("email", summaryData.get(4).getText());
-            summaryDataFromOrderingPage.put("tel", summaryData.get(5).getText());
-            summaryDataFromOrderingPage.put("nip", summaryData.get(6).getText());
+            IList<IWebElement> summaryData = driver.FindElements(By.CssSelector(dataFromSummaryOrderingPageSelector));
+            Hashtable summaryDataFromOrderingPage = new Hashtable();
+            summaryDataFromOrderingPage.Add("name", summaryData[0].Text);
+            summaryDataFromOrderingPage.Add("address", summaryData[1].Text);
+            summaryDataFromOrderingPage.Add("code", summaryData[2].Text);
+            summaryDataFromOrderingPage.Add("city", summaryData[3].Text);
+            summaryDataFromOrderingPage.Add("email", summaryData[4].Text);
+            summaryDataFromOrderingPage.Add("tel", summaryData[5].Text);
+            summaryDataFromOrderingPage.Add("nip", summaryData[6].Text);
 
             return summaryDataFromOrderingPage;
-        }*/
+        }
 
-        public OrderingPage returnToStepOneOrderingPage()
+        public OrderingPage ReturnToStepOneOrderingPage()
         {
 
             driver.FindElement(By.CssSelector(returnToStepOneButtonOrderingPageSelector)).Click();
@@ -212,21 +213,21 @@ namespace SeleniumC.POM
         }
 
 
-        public OrderingPage checkTermsConfirmation()
+        public OrderingPage CheckTermsConfirmation()
         {
 
             driver.FindElement(By.CssSelector(termsConfirmationCheckboxOrderingPageSelector)).Click();
             return this;
         }
 
-        public OrderingPage checkRodoConfirmation()
+        public OrderingPage CheckRodoConfirmation()
         {
 
             driver.FindElement(By.CssSelector(rodoConfirmationChceckboxOrderingPageSelector)).Click();
             return this;
         }
 
-        public OrderingPage finalizeAndConfirmOrder()
+        public OrderingPage FinalizeAndConfirmOrder()
         {
 
             driver.FindElement(By.CssSelector(finalOrderButtonOrderingPageSelector)).Click();

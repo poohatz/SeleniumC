@@ -108,17 +108,16 @@ namespace SeleniumC.POM
             return this;
         }
 
-       /*
+       
         public OrderingPage SaveAndOrderProductsFromCart()
         {
 
-            this.acceptCookie();
+            AcceptCookie();
             OrderingPage orderingPage = new OrderingPage(driver);
-            driver.findElement(saveAndOrderButtonSelector).click();
-            logger.info("Save and Order Button clicked");
+            driver.FindElement(By.CssSelector(saveAndOrderButtonSelector)).Click();
             return orderingPage;
 
-        }*/
+        }
 
 
     }
